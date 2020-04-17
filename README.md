@@ -21,7 +21,7 @@ Clone or fork this repository. Then do:
 - `src`: The root directory for the source files
 - `src/img`: Place all images here
 - `src/js`: JavaScript files go here
-- `src/scss`: Place SCSS styles here
+- `src/scss`: Place SCSS styles here. Entry point is `style.scss`.
 - `src/index.html`: The main html page
 
 ### dist

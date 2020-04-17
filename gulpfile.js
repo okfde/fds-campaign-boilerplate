@@ -12,7 +12,7 @@ const connect = require('gulp-connect')
 
 const paths = {
   src: { 
-    scss: 'src/scss/**/*.scss',
+    scss: 'src/scss/style.scss',
     js: 'src/js/**/*.js',
     html: 'src/*.html',
     img: 'src/img/**/*.{gif,jpg,png,svg}'
