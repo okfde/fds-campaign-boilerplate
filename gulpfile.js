@@ -12,7 +12,8 @@ const connect = require('gulp-connect')
 
 const paths = {
   src: { 
-    scss: 'src/scss/style.scss',
+    scss: 'src/scss/**/*.scss',
+    scssEntry: 'src/scss/style.scss',
     js: 'src/js/**/*.js',
     html: 'src/*.html',
     img: 'src/img/**/*.{gif,jpg,png,svg}'
@@ -35,7 +36,7 @@ function webserver () {
 }
 
 function scssTask () {
-  return src(paths.src.scss)
+  return src(paths.src.scssEntry)
     .pipe(sourcemaps.init()) // initialize sourcemaps first
     .pipe(
       sass()
