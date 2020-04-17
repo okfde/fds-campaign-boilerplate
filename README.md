@@ -4,13 +4,17 @@ This is a front-end boilerplate that can be used to build campaign sites for [Fr
 
 ## Instructions
 
-Clone or fork this repository when creating a campaign page for FragDenStaat. Then do:
+Clone or fork this repository. Then do:
 
 1. Install `gulp-cli` globally with `yarn global add gulp-cli`
 2. Install dependencies:
 `yarn`
-3. Run `gulp`
-4. 🎉
+
+### Development
+- `yarn dev` will start a local server at `http://localhost:8000` with LiveReload-support.
+
+### Production
+- `yarn build` will start the build task and exit when done
 
 ## Directories and files
 ### src

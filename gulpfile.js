@@ -84,7 +84,7 @@ function watchTask () {
 }
 
 // Export the default Gulp task so it can be run
-exports.default = parallel(
+exports.dev = parallel(
   series(
     scssTask,
     jsTask,
@@ -93,4 +93,11 @@ exports.default = parallel(
     watchTask
   ),
   webserver
+);
+
+exports.build = series(
+  scssTask,
+  jsTask,
+  imgTask,
+  htmlTask,
 );
