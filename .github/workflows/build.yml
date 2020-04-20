@@ -1,0 +1,29 @@
+name: Build campaign
+
+on:
+  push:
+    branches:
+    - master
+    paths-ignore:
+    - README.md
+    - dist/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: yarn install
+    - run: yarn build
+    - name: Commit and push dist if changed
+      run: |-
+        git diff
+        git config --global user.email "build-bot@example.com"
+        git config --global user.name "Build-bot"
+        git diff --quiet dist/ || (git add -f dist/* && git commit -m "Updated build")
+        git push
