@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.js"],"names":["world","test","concat","console","warn"],"mappings":"aAAA,IAAMA,MAAQ,QACRC,KAAI,SAAAC,OAAYF,OAAtBG,QAAUC,KAAAH","file":"main.js","sourcesContent":["const world = 'World'\nconst test = `Hello ${world}`\n\nconsole.warn(test)\n\n"]}
