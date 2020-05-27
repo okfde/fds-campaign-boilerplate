@@ -9,6 +9,7 @@ const cssnano = require('cssnano');
 const replace = require('gulp-replace');
 const notify = require('gulp-notify')
 const connect = require('gulp-connect')
+const babel = require('gulp-babel')
 
 const paths = {
   src: { 
@@ -52,8 +53,13 @@ function scssTask () {
 
 function jsTask () {
   return src([paths.src.js])
+    .pipe(sourcemaps.init()) // initialize sourcemaps first
+    .pipe(babel({
+      presets: ['@babel/preset-env']
+    }))
     .pipe(concat('main.js'))
     .pipe(uglify())
+    .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
     .pipe(dest(paths.dist.js))
     .pipe(connect.reload())
 }
